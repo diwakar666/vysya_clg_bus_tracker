@@ -22,19 +22,3 @@ subprojects {
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
-subprojects {
-    project.configurations.all {
-        resolutionStrategy.eachDependency {
-            if (requested.group == "androidx.core" && !requested.name.contains("ktx")) {
-                useVersion("1.13.1")
-            }
-        }
-    }
-    afterEvaluate {
-        val android = project.extensions.findByName("android")
-        if (android != null) {
-            val setCompileSdkVersion = android.javaClass.getMethod("setCompileSdkVersion", Int::class.javaPrimitiveType)
-            setCompileSdkVersion.invoke(android, 34)
-        }
-    }
-}
