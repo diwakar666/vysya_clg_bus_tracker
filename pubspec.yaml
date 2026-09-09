@@ -39,7 +39,7 @@ dependencies:
   geolocator: ^10.1.0
   firebase_core: ^2.27.0
   firebase_database: ^10.4.0
-
+  audioplayers: ^5.2.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
