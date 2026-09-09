@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.bus_tracker_student"
-    compileSdk = 34
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
