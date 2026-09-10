@@ -172,7 +172,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen> {
   }
 
   void _listenToBusLocation() {
-    _busStream = _dbRef.child('buses/${widget.busId}').onValue.listen((event) {
+    _busStream = _dbRef.child('buses/${widget.busId.replaceAll('Bus ', '')}').onValue.listen((event) {
       final data = event.snapshot.value as Map<dynamic, dynamic>?;
       if (data != null && data['lat'] != null && data['lng'] != null) {
         setState(() {
